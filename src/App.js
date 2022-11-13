@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+import ExchangeRatesDisplay from "./components/barchart/ExchangeRatesDsiplay";
+import Login from "./components/Login/Login";
+import { initialState,reducer } from "./components/Reducer/AppReducer";
+import { useReducer } from "react";
+import { AppContext } from "./components/Reducer/AppContext";
 function App() {
+  const [state,dispatch] = useReducer(reducer,initialState)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <AppContext.Provider value={{state,dispatch}}>
+        <div className="App">
+      {state.loader?<Login/>:
+      <ExchangeRatesDisplay/>}
     </div>
+    </AppContext.Provider>
+    
   );
 }
 
