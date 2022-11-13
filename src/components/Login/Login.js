@@ -1,7 +1,7 @@
 import { useForm ,Controller} from 'react-hook-form';
 import { useState } from 'react';
 import { useContext } from 'react';
-import { AppContext } from '../Reducer/AppContext';
+import { AppContext } from '../../Reducer/AppContext';
 import './login.css';
 const Login = () => {
     const {state:{loader},dispatch} = useContext(AppContext);

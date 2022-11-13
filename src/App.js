@@ -1,8 +1,8 @@
 import ExchangeRatesDisplay from "./components/barchart/ExchangeRatesDsiplay";
 import Login from "./components/Login/Login";
-import { initialState,reducer } from "./components/Reducer/AppReducer";
+import { initialState,reducer } from "./Reducer/AppReducer";
 import { useReducer } from "react";
-import { AppContext } from "./components/Reducer/AppContext";
+import { AppContext } from "./Reducer/AppContext";
 function App() {
   const [state,dispatch] = useReducer(reducer,initialState)
   return (
